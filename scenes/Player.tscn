@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/player/f18.png" type="Texture" id=2]
+[ext_resource path="res://scripts/WeaponPosition.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 7.0
@@ -160,3 +161,41 @@ tree_root = SubResource( 13 )
 anim_player = NodePath("../animation")
 active = true
 parameters/blend_position = 0
+
+[node name="weapons" type="Node2D" parent="."]
+
+[node name="weapon_one" type="Node2D" parent="weapons"]
+
+[node name="position_center" type="Position2D" parent="weapons/weapon_one"]
+position = Vector2( 0, -18 )
+script = ExtResource( 3 )
+
+[node name="weapon_two" type="Node2D" parent="weapons"]
+visible = false
+
+[node name="position_up_right" type="Position2D" parent="weapons/weapon_two"]
+position = Vector2( 10, -15 )
+script = ExtResource( 3 )
+
+[node name="position_up_left2" type="Position2D" parent="weapons/weapon_two"]
+position = Vector2( -10, -15 )
+script = ExtResource( 3 )
+
+[node name="weapon_three" type="Node2D" parent="weapons"]
+visible = false
+
+[node name="position_up_right" type="Position2D" parent="weapons/weapon_three"]
+position = Vector2( 10, -15 )
+script = ExtResource( 3 )
+
+[node name="position_up_left2" type="Position2D" parent="weapons/weapon_three"]
+position = Vector2( -10, -15 )
+script = ExtResource( 3 )
+
+[node name="position_down_right" type="Position2D" parent="weapons/weapon_three"]
+position = Vector2( 15, -7 )
+script = ExtResource( 3 )
+
+[node name="position_down_left" type="Position2D" parent="weapons/weapon_three"]
+position = Vector2( -15, -7 )
+script = ExtResource( 3 )
