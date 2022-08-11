@@ -20,4 +20,5 @@ shape = SubResource( 1 )
 position = Vector2( 0, 0.5 )
 scale = Vector2( 0.1, 0.65 )
 
+[connection signal="area_entered" from="." to="." method="_on_PlayerShot_area_entered"]
 [connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]
