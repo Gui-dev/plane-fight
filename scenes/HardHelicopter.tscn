@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/sprites/helicopter/hard/helicopter_hard_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/helicopter/hard/helice_hard.png" type="Texture" id=2]
 [ext_resource path="res://scripts/EnemyHelicopter.gd" type="Script" id=3]
+[ext_resource path="res://prefabs/ExplosionTwo.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 15.0
@@ -31,6 +32,7 @@ animations = [ {
 [node name="HardHelicopter" type="Area2D" groups=["enemy"]]
 script = ExtResource( 3 )
 energy = 6
+Explosion = ExtResource( 4 )
 
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -4 )
@@ -41,5 +43,11 @@ texture = ExtResource( 1 )
 
 [node name="animated" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 playing = true
+
+[node name="timer_blink" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="timer_blink" to="." method="_on_timer_blink_timeout"]
