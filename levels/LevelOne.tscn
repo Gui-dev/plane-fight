@@ -19,17 +19,24 @@ texture = ExtResource( 2 )
 [node name="Player" parent="world" instance=ExtResource( 1 )]
 position = Vector2( 182, 318 )
 
-[node name="HardHelicopter" parent="." instance=ExtResource( 4 )]
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="HardHelicopter" parent="enemies" instance=ExtResource( 4 )]
 position = Vector2( 174, 66 )
 
-[node name="RegularHelicopter" parent="." instance=ExtResource( 3 )]
+[node name="RegularHelicopter" parent="enemies" instance=ExtResource( 3 )]
 position = Vector2( 266, 66 )
 
-[node name="EnemyTank" parent="." instance=ExtResource( 5 )]
+[node name="EnemyTank" parent="enemies" instance=ExtResource( 5 )]
 position = Vector2( 144, 154 )
 
-[node name="PowerUp" parent="." instance=ExtResource( 6 )]
+[node name="power_ups" type="Node2D" parent="."]
+
+[node name="PowerUp" parent="power_ups" instance=ExtResource( 6 )]
 position = Vector2( 87, 33 )
 
-[node name="PowerUp2" parent="." instance=ExtResource( 6 )]
+[node name="PowerUp2" parent="power_ups" instance=ExtResource( 6 )]
+position = Vector2( 87, 33 )
+
+[node name="PowerUp3" parent="power_ups" instance=ExtResource( 6 )]
 position = Vector2( 87, 33 )
