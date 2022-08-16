@@ -14,4 +14,5 @@ func _on_notifier_screen_exited() -> void:
 
 func _on_EnemyShooting_area_entered(area: Area2D) -> void:
   if area.is_in_group('player'):
+    area.call_deferred('apply_damage')
     queue_free()
