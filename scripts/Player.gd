@@ -4,8 +4,9 @@ extends Area2D
 var speed = 200
 var movement = Vector2()
 var smooth := 0.0
+var weapon := 0
 onready var animation = $animation_tree
-
+onready var weapons = $weapons
 
 
 func _process(delta: float) -> void:
@@ -15,3 +16,13 @@ func _process(delta: float) -> void:
   
   smooth = lerp(smooth, movement.x, 50 * delta)
   animation.set('parameters/blend_position', movement.x)
+
+
+func upgrade_weapon() -> void:
+  weapon += 1
+  
+  if weapon < weapons.get_child_count():
+    for weapon_selected in weapons.get_children():
+      weapon_selected.visible = false
+    
+    weapons.get_child(weapon).visible = true

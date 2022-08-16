@@ -174,28 +174,28 @@ script = ExtResource( 3 )
 visible = false
 
 [node name="position_up_right" type="Position2D" parent="weapons/weapon_two"]
-position = Vector2( 10, -15 )
+position = Vector2( 5, -15 )
 script = ExtResource( 3 )
 
 [node name="position_up_left2" type="Position2D" parent="weapons/weapon_two"]
-position = Vector2( -10, -15 )
+position = Vector2( -5, -15 )
 script = ExtResource( 3 )
 
 [node name="weapon_three" type="Node2D" parent="weapons"]
 visible = false
 
 [node name="position_up_right" type="Position2D" parent="weapons/weapon_three"]
-position = Vector2( 10, -15 )
+position = Vector2( 5, -15 )
 script = ExtResource( 3 )
 
 [node name="position_up_left2" type="Position2D" parent="weapons/weapon_three"]
-position = Vector2( -10, -15 )
+position = Vector2( -5, -15 )
 script = ExtResource( 3 )
 
 [node name="position_down_right" type="Position2D" parent="weapons/weapon_three"]
-position = Vector2( 15, -7 )
+position = Vector2( 10, -7 )
 script = ExtResource( 3 )
 
 [node name="position_down_left" type="Position2D" parent="weapons/weapon_three"]
-position = Vector2( -15, -7 )
+position = Vector2( -10, -7 )
 script = ExtResource( 3 )
