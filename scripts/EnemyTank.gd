@@ -18,6 +18,7 @@ func apply_damage() -> void:
 
 
 func _death() -> void:
+  $timer_blink.stop()
   $sprite.queue_free()
   $destroyed.visible = true
   $collision.queue_free()

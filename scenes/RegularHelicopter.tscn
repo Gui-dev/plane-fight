@@ -5,9 +5,8 @@
 [ext_resource path="res://scripts/EnemyHelicopter.gd" type="Script" id=3]
 [ext_resource path="res://prefabs/ExplosionOne.tscn" type="PackedScene" id=4]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 6.0
-height = 14.0
+[sub_resource type="CircleShape2D" id=6]
+radius = 11.4018
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
@@ -34,8 +33,8 @@ script = ExtResource( 3 )
 Explosion = ExtResource( 4 )
 
 [node name="collision" type="CollisionShape2D" parent="."]
-position = Vector2( 1, -3 )
-shape = SubResource( 1 )
+position = Vector2( 0, -2 )
+shape = SubResource( 6 )
 
 [node name="sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -44,7 +43,7 @@ region_rect = Rect2( 256, 0, 32, 32 )
 
 [node name="animated" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="timer_blink" type="Timer" parent="."]
