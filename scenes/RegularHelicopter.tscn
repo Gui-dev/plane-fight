@@ -29,7 +29,9 @@ animations = [ {
 } ]
 
 [node name="RegularHelicopter" type="Area2D" groups=["enemy"]]
+z_index = 2
 script = ExtResource( 3 )
+energy = 2
 Explosion = ExtResource( 4 )
 
 [node name="collision" type="CollisionShape2D" parent="."]

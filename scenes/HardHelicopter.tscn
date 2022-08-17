@@ -29,6 +29,7 @@ animations = [ {
 } ]
 
 [node name="HardHelicopter" type="Area2D" groups=["enemy"]]
+z_index = 2
 script = ExtResource( 3 )
 energy = 6
 Explosion = ExtResource( 4 )

@@ -13,6 +13,6 @@ func _on_notifier_screen_exited() -> void:
 
 
 func _on_PlayerShot_area_entered(area: Area2D) -> void:
-  if area.has_method('apply_damage'):
+  if area.has_method('apply_damage') and area.is_in_group('enemy'):
     area.apply_damage()
     queue_free()

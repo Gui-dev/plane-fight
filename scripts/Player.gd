@@ -5,10 +5,13 @@ var speed = 200
 var movement = Vector2()
 var smooth := 0.0
 var weapon := 0
-var lifes := 3
 var death := false
 onready var animation = $animation_tree
 onready var weapons = $weapons
+
+
+func _ready() -> void:
+  GameController.lifes = 2
 
 
 func _process(delta: float) -> void:
@@ -31,19 +34,19 @@ func upgrade_weapon() -> void:
 
 
 func apply_damage() -> void:
-  lifes -= 1
   
-  if lifes >= 0 and not death:
-    $collision.disabled = true
+  if GameController.lifes > 0 and not death:
+    GameController.lifes -= 1
+    $collision.set_deferred('disabled', true)
     for _flash_ship in range(12):
       yield(get_tree().create_timer(.1), 'timeout')
       $sprite.visible = !$sprite.visible
       
-    $collision.disabled = false
+    $collision.set_deferred('disabled', false)
     $sprite.visible = true
-  elif lifes < 0 and not death:
+  elif not death:
     death = true
-    $collision.disabled = true
+    $collision.set_deferred('disabled', true)
     $sprite.visible = false
     set_process(false)
   

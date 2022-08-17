@@ -1,14 +1,21 @@
 extends Area2D
 
 
+var score := 0
+
 export(int) var energy = 3
 export(PackedScene) var Explosion
+
+
+func _ready() -> void:
+  score = energy * 50
 
 
 func apply_damage() -> void:
   energy -= 1
   
   if energy <= 0:
+    GameController.score += score
     var explosion_temp = Explosion.instance()
     get_tree().root.add_child(explosion_temp)
     explosion_temp.global_position = global_position

@@ -13,6 +13,10 @@ config_version=4
 config/name="plane-fight"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameController="*res://scripts/GameController.gd"
+
 [display]
 
 window/size/width=360
